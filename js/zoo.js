@@ -23,10 +23,13 @@ Zoo.prototype.isOpen = function() {
   if (this.status === 'open') {
     return 'Open!';
   }
+  else {
+    return 'Closed!';
+  }
 };
 
 Zoo.prototype.addAnimals = function(animal) {
-  if (this.status === 'open') {
+  if (this.status === 'open' && this.animals[animal] === -1) {
     this.animals.push(animal);
   }
 };
