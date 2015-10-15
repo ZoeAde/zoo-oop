@@ -30,9 +30,6 @@ describe('Animal', function() {
     });
   });
 
-
-
-
    describe('#wakeUp', function(){
     it('should change state to awake', function(){
       animal.wakeUp();
