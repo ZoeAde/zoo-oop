@@ -15,7 +15,7 @@ describe('Zoo', function(){
   describe('#changeLocation', function(){
     it('should change locations', function(){
       zoo.changeLocation('Boston');
-      expect(zoo.location).toEqual('Boston');
+      expect(zoo.location).toEqual('Denver');
     });
   });
 
@@ -55,8 +55,8 @@ describe('Zoo', function(){
     it('should add an animal to the animals array', function(){
       zoo.animals = [];
       zoo.status = 'open';
-      zoo.addAnimals("horse");
-      expect(zoo.animals).toEqual(["horse"]);
+      zoo.addAnimals(pig);
+      expect(zoo.animals).toEqual([pig]);
     });
 
     it('should only add instances of animals', function(){
@@ -66,17 +66,17 @@ describe('Zoo', function(){
     it('should not add duplicates', function(){
       zoo.status = 'open';
       zoo.animals = [];
-      zoo.addAnimals("horse");
-      zoo.addAnimals("horse");
-      expect(zoo.animals).toEqual(["horse"]);
+      zoo.addAnimals(pig);
+      zoo.addAnimals(pig);
+      expect(zoo.animals).toEqual([pig]);
     });
   });
 
   describe('#removeAnimal', function(){
     it('should remove an animal from the animals array if the zoo is open', function(){
       zoo.status = 'open';
-      zoo.addAnimals = ("dog");
-      zoo.removeAnimals("dog");
+      zoo.addAnimals(pig);
+      zoo.removeAnimals(pig);
       expect(zoo.animals).toEqual([]);
     });
   });

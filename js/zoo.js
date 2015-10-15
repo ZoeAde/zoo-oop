@@ -29,14 +29,17 @@ Zoo.prototype.isOpen = function() {
 };
 
 Zoo.prototype.addAnimals = function(animal) {
-  if (this.status === 'open' && this.animals[animal] === -1) {
+  //set var to instance of animal in this.animals
+  var test = this.animals.indexOf(animal)
+  if (this.status === 'open' && animal instanceof Animal && test) {
     this.animals.push(animal);
   }
 };
 
 Zoo.prototype.removeAnimals = function(animal) {
   if (this.status === 'open') {
-    this.animals.splice(animal);
+    var index = this.animals.indexOf(animal);
+    this.animals.splice(index, 1);
   }
 };
 
